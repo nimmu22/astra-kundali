@@ -5,9 +5,9 @@ import assert from 'node:assert/strict';
 import {Chart} from '../src/components/Chart';
 import type {ChartResult} from '../src/domain';
 const {default:App}=await import('../test-output/ssr/App.js' as string);
-const en=renderToStaticMarkup(createElement(App));assert.ok(en.includes('Generate my Kundali')&&en.includes('No account needed')&&!en.includes('NaN'));
+const en=renderToStaticMarkup(createElement(App));assert.ok(en.includes('Generate my Kundali')&&en.includes('No account needed')&&en.includes('studio-tour')&&en.includes('FICTIONAL EXAMPLE')&&en.includes('aria-pressed="true"')&&!en.includes('NaN')); 
 Object.defineProperty(globalThis,'localStorage',{value:{getItem:(key:string)=>key==='jyotir-lang'?'hi':'light'},configurable:true});
-const hi=renderToStaticMarkup(createElement(App));assert.ok(hi.includes('मेरी कुण्डली बनाएँ')&&hi.includes('जन्म तिथि'));
+const hi=renderToStaticMarkup(createElement(App));assert.ok(hi.includes('मेरी कुण्डली बनाएँ')&&hi.includes('जन्म तिथि')&&hi.includes('काल्पनिक उदाहरण')&&hi.includes('नवांश'));
 await mkdir('test-output/charts',{recursive:true});const c=JSON.parse(await readFile('tests/fixtures/numerical-cases.json','utf8')).charts[125] as ChartResult;
 const css='.chart-bg{fill:#202824}.chart-line{stroke:#d9ba84;stroke-width:.75;opacity:.7}.sign-label{fill:#99a59d;font:9px sans-serif}.chart-planet{fill:#c5dbac;font:12px sans-serif}.chart-center{fill:#d9ba84;font:31px serif}';
 for(const style of ['north','south','east'] as const){const svg=renderToStaticMarkup(createElement(Chart,{chart:c,division:1,style,lang:'en'})).replace('<svg ','<svg xmlns="http://www.w3.org/2000/svg" ').replace('<defs>',`<style>${css}</style><defs>`);assert.equal((svg.match(/class="chart-planet/g)||[]).length,9);await writeFile(`test-output/charts/${style}.svg`,svg);}

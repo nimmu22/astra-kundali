@@ -64,3 +64,13 @@ Next releases need actual browser/mobile/offline/print QA, independently sourced
 ## Rebuild the India snapshot
 
 Download GeoNames `export/dump/IN.zip` as `gazetteer.zip`, `export/zip/IN.zip` as `postal.zip`, plus `admin1CodesASCII.txt` and `admin2Codes.txt` as `admin1.txt` / `admin2.txt` into one directory. Run `python3 scripts/build-india-locations.py /path/to/downloads`. Current source archive includes the processed snapshot, source URLs, checksums and original readmes at `public/locations/`. Do not substitute a nearest settlement for a PIN locality: their coordinates have different precision.
+
+## Studio and report navigation
+
+The home screen includes an interactive, clearly labelled fictional Jaipur chart
+with D1/D9/D10 views, sample birth Panchang and birth-period timeline. Opening the
+example recomputes it locally. A report guide opens every planet, all twelve houses,
+16 divisions, yoga/dosha checks, Saturn periods and Ashtakavarga. House explanations
+include actual lord connections, occupants and received aspects; every current
+MD/AD/PD has natal context, followed by current/upcoming AD dates. These explanations
+are original traditional symbolism, not guaranteed personal predictions.

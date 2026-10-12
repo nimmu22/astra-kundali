@@ -1,0 +1,329 @@
+{
+  "input": {
+    "name": "Example chart",
+    "date": "2000-01-01",
+    "time": "12:00",
+    "certainty": "exact",
+    "disambiguation": "reject",
+    "place": {
+      "id": "1269515",
+      "name": "Jaipur",
+      "region": "Rajasthan",
+      "country": "IN",
+      "latitude": 26.9166667,
+      "longitude": 75.7833333,
+      "timezone": "Asia/Kolkata"
+    }
+  },
+  "profile": {
+    "ayanamsha": 1,
+    "nodes": "mean",
+    "yearDays": 365.25636,
+    "karakas": 7
+  },
+  "resolved": {
+    "utc": "2000-01-01T06:30:00Z",
+    "epoch": 946708200000,
+    "offset": "+05:30",
+    "timezone": "Asia/Kolkata",
+    "tzdb": "Runtime Intl/IANA rules; exact tzdb version not exposed"
+  },
+  "jd": 2451544.7708333335,
+  "ayanamsa": 23.8532135057568,
+  "ascendant": 341.0551275989272,
+  "cusps": [
+    341.0551275989272,
+    17.37476376233839,
+    45.26588614282332,
+    69.37198188688586,
+    93.91056345510066,
+    123.13465368512209,
+    161.05512759892719,
+    197.37476376233838,
+    225.26588614282332,
+    249.37198188688586,
+    273.91056345510066,
+    303.1346536851221
+  ],
+  "planets": [
+    {
+      "id": 0,
+      "name": "Sun",
+      "short": "Su",
+      "longitude": 256.28208862810874,
+      "latitude": 0.00023366623348287845,
+      "speed": 1.019370937598433,
+      "flags": 65860,
+      "sign": 8,
+      "degree": 16.28208862810874,
+      "nakshatra": 19,
+      "pada": 1,
+      "house": 10
+    },
+    {
+      "id": 1,
+      "name": "Moon",
+      "short": "Mo",
+      "longitude": 196.71168769046724,
+      "latitude": 5.205675616740643,
+      "speed": 12.056690187282895,
+      "flags": 65860,
+      "sign": 6,
+      "degree": 16.711687690467244,
+      "nakshatra": 14,
+      "pada": 4,
+      "house": 8
+    },
+    {
+      "id": 4,
+      "name": "Mars",
+      "short": "Ma",
+      "longitude": 303.93234197795,
+      "latitude": -1.070640102905135,
+      "speed": 0.7756276283239895,
+      "flags": 65860,
+      "sign": 10,
+      "degree": 3.9323419779499886,
+      "nakshatra": 22,
+      "pada": 4,
+      "house": 12
+    },
+    {
+      "id": 2,
+      "name": "Mercury",
+      "short": "Me",
+      "longitude": 247.67955816683266,
+      "latitude": -0.9723997104220764,
+      "speed": 1.5550090337073788,
+      "flags": 65860,
+      "sign": 8,
+      "degree": 7.679558166832663,
+      "nakshatra": 18,
+      "pada": 3,
+      "house": 10
+    },
+    {
+      "id": 5,
+      "name": "Jupiter",
+      "short": "Ju",
+      "longitude": 1.3905643657975275,
+      "latitude": -1.2633593671680226,
+      "speed": 0.03994835156142359,
+      "flags": 65860,
+      "sign": 0,
+      "degree": 1.3905643657975275,
+      "nakshatra": 0,
+      "pada": 1,
+      "house": 2
+    },
+    {
+      "id": 3,
+      "name": "Venus",
+      "short": "Ve",
+      "longitude": 217.435542761256,
+      "latitude": 2.0727492547999606,
+      "speed": 1.2087391166861456,
+      "flags": 65860,
+      "sign": 7,
+      "degree": 7.435542761255988,
+      "nakshatra": 16,
+      "pada": 2,
+      "house": 9
+    },
+    {
+      "id": 6,
+      "name": "Saturn",
+      "short": "Sa",
+      "longitude": 16.54704407800744,
+      "latitude": -2.4459097191035077,
+      "speed": -0.02040156424393773,
+      "flags": 65860,
+      "sign": 0,
+      "degree": 16.54704407800744,
+      "nakshatra": 1,
+      "pada": 1,
+      "house": 2
+    },
+    {
+      "id": 10,
+      "name": "Rahu",
+      "short": "Ra",
+      "longitude": 101.19956757320953,
+      "latitude": 2.4175470700678966e-15,
+      "speed": -0.052992019727111754,
+      "flags": 65860,
+      "sign": 3,
+      "degree": 11.199567573209535,
+      "nakshatra": 7,
+      "pada": 3,
+      "house": 5
+    },
+    {
+      "id": 11,
+      "name": "Ketu",
+      "short": "Ke",
+      "longitude": 281.19956757320955,
+      "latitude": 2.4175470700678966e-15,
+      "speed": -0.052992019727111754,
+      "flags": 65860,
+      "sign": 9,
+      "degree": 11.19956757320955,
+      "nakshatra": 21,
+      "pada": 1,
+      "house": 11
+    }
+  ],
+  "dasha": [
+    {
+      "lord": 10,
+      "start": 518755128426.10626,
+      "end": 1086801819498.1062,
+      "years": 18
+    },
+    {
+      "lord": 5,
+      "start": 1086801819498.1062,
+      "end": 1591732211562.1062,
+      "years": 16
+    },
+    {
+      "lord": 6,
+      "start": 1591732211562.1062,
+      "end": 2191337052138.1062,
+      "years": 19
+    },
+    {
+      "lord": 2,
+      "start": 2191337052138.1062,
+      "end": 2727825593706.1064,
+      "years": 17
+    },
+    {
+      "lord": 11,
+      "start": 2727825593706.1064,
+      "end": 2948732640234.1064,
+      "years": 7
+    },
+    {
+      "lord": 3,
+      "start": 2948732640234.1064,
+      "end": 3579895630314.1064,
+      "years": 20
+    },
+    {
+      "lord": 0,
+      "start": 3579895630314.1064,
+      "end": 3769244527338.1064,
+      "years": 6
+    },
+    {
+      "lord": 1,
+      "start": 3769244527338.1064,
+      "end": 4084826022378.1064,
+      "years": 10
+    },
+    {
+      "lord": 4,
+      "start": 4084826022378.1064,
+      "end": 4305733068906.1064,
+      "years": 7
+    },
+    {
+      "lord": 10,
+      "start": 4305733068906.1064,
+      "end": 4873779759978.106,
+      "years": 18
+    },
+    {
+      "lord": 5,
+      "start": 4873779759978.106,
+      "end": 5378710152042.106,
+      "years": 16
+    },
+    {
+      "lord": 6,
+      "start": 5378710152042.106,
+      "end": 5978314992618.106,
+      "years": 19
+    },
+    {
+      "lord": 2,
+      "start": 5978314992618.106,
+      "end": 6514803534186.106,
+      "years": 17
+    },
+    {
+      "lord": 11,
+      "start": 6514803534186.106,
+      "end": 6735710580714.106,
+      "years": 7
+    },
+    {
+      "lord": 3,
+      "start": 6735710580714.106,
+      "end": 7366873570794.106,
+      "years": 20
+    },
+    {
+      "lord": 0,
+      "start": 7366873570794.106,
+      "end": 7556222467818.106,
+      "years": 6
+    },
+    {
+      "lord": 1,
+      "start": 7556222467818.106,
+      "end": 7871803962858.106,
+      "years": 10
+    },
+    {
+      "lord": 4,
+      "start": 7871803962858.106,
+      "end": 8092711009386.106,
+      "years": 7
+    }
+  ],
+  "sunTimes": {
+    "sunrise": 946691393500.8868,
+    "sunset": 946728617778.5261
+  },
+  "rules": [
+    {
+      "id": "retro-6",
+      "title": "Saturn is retrograde",
+      "hi": "शनि वक्री है",
+      "details": "Geocentric longitude speed is -0.020402°/day. A negative speed defines apparent retrograde motion; this alone is not a prediction.",
+      "detailsHi": "दीर्घांश गति -0.020402°/दिन है। ऋणात्मक गति वक्री स्थिति दिखाती है; यह अकेले भविष्यवाणी नहीं है।",
+      "source": "https://www.astro.com/swisseph/swephprg.htm",
+      "status": "Numerical definition"
+    },
+    {
+      "id": "moon-jupiter-kendra",
+      "title": "Moon–Jupiter Kendra",
+      "hi": "चन्द्र–गुरु केन्द्र सम्बन्ध",
+      "details": "Jupiter is in a whole-sign angular position from the Moon. This records the basic geometric condition often used in Gajakesari discussion; strength, exceptions and a full yoga judgement are not evaluated.",
+      "detailsHi": "गुरु चन्द्र से केन्द्र राशि में है। यह केवल मूल राशि सम्बन्ध है; पूर्ण योग निर्णय, बल और अपवाद जाँचे नहीं गए हैं।",
+      "source": "https://github.com/naturalstupid/PyJHora",
+      "status": "Traditional condition · experimental"
+    },
+    {
+      "id": "mars-house",
+      "title": "Mars house check",
+      "hi": "मंगल भाव जाँच",
+      "details": "Mars occupies whole-sign house 12. This is one commonly used Manglik screening set including house 2. Cancellation rules and lineage differences are not evaluated.",
+      "detailsHi": "मंगल पूर्ण-राशि भाव 12 में है। यह एक प्रारम्भिक पारम्परिक जाँच है; अपवाद और अलग परम्पराओं के नियम शामिल नहीं हैं।",
+      "source": "https://github.com/naturalstupid/PyJHora",
+      "status": "Traditional screen · experimental"
+    }
+  ],
+  "metadata": {
+    "engine": "Swiss Ephemeris 2.10.03",
+    "wrapper": "@swisseph/browser 1.4.0",
+    "backend": "Moshier (explicit flags 4; built-in, no external ephemeris files)",
+    "calendar": "Proleptic Gregorian; supported years 1900–2100",
+    "houses": "Whole-sign natal houses; tropical Placidus cusps minus apparent ayanamsha for KP",
+    "createdAt": "2026-10-12T04:54:09.222Z",
+    "ruleVersion": "astra-0.3.0"
+  },
+  "warnings": []
+}

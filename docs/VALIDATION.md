@@ -53,3 +53,17 @@ SSR confirms the new header, hero actions, current navigation state and birth fo
 The new-chart flow also reopens the birth editor. No astronomy/rule formulas changed.
 Desktop/mobile visual interaction QA remains unverified: the managed browser QA
 capability was unavailable. The supplied reference was visually inspected separately.
+
+## Studio and explanation depth (12 October 2026)
+
+The interactive fictional Jaipur fixture is reproduced with the engine and checked
+against the previously verified Pisces Lagna, Libra Moon, Swati Pada 4 anchor.
+Special Mars/Jupiter/Saturn received aspects, omission of node aspects, ownership,
+unknown-time withholding and contiguous upcoming AD intervals across an MD boundary
+are tested. New studio/evidence components render in English/Hindi with sample labels.
+Print output reuses explanation styles and omits repeated primitive chart/rule blocks.
+
+TypeScript and 16 Node test groups pass. The final build checks English/Hindi SSR
+and the actual service-worker inventory. No calculation engine formula changed.
+Visual layout, live clicks, print pagination and browser offline behavior remain
+unverified because the supported managed browser QA capability was unavailable.

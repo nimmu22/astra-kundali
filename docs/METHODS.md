@@ -62,3 +62,22 @@ Kaal Sarp is a geometric screen: seven Sun–Saturn planets strictly within eith
 Sade Sati uses sidereal Saturn in the 12th, 1st and 2nd sign relative to natal Moon; Dhaiya uses the 4th/8th. Convention reference: https://www.astrosage.com/free/sade-sati-report.asp . The engine scans daily from birth through January 1 of birth year +101, capped at January 1, 2101, with 22 bisections for each sign change. It includes direct and retrograde re-entries. Table rows touching the coverage endpoints are explicitly clipped; they are not actual ingress/egress dates. It is a selected sign-based convention with the chart's ayanamsha, not an event forecast or independent almanac certification.
 
 Ashtakavarga uses the unreduced Parashari offsets from PyJHora commit 48e57d29b47a3143519910a24866758116467485, with exact provenance/license in `src/data/ashtakavarga-tables.json`. Seven target rows are Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn; eight contributors include Lagna. Columns are Aries through Pisces. BAV row totals are 48,49,39,54,56,52,39; SAV total is337, excludes a separate Lagna target row. Prastara shows every contribution. No alternate reverse tables, Trikona/Ekadhipatya reductions or pindas are applied. The app and derived tables are AGPL-3.0-or-later; original copyright is retained.
+
+## Explained evidence and the studio example
+
+Original English/Hindi editorial explanations connect each whole-sign D1 house to
+its actual lord placement, occupants and received Parashari graha drishti.
+Planetary themes and practical house examples explain the notation; they do not
+measure personality or forecast events. Nodes receive no invented sign ownership
+or graha aspects. The dedicated house section covers all twelve houses; the six
+life-area groups reuse the relevant house evidence.
+
+MD, AD and PD each display their own natal placement and sign ownership. The
+next-period table retains full intervals and can cross a major-period boundary.
+Nakshatra progress is the Moon's arc within 13°20′; the remaining fraction explains
+birth Dasha balance. Unknown birth time withholds house/period evidence.
+
+The public studio tour uses a fictional 1 January 2000, 12:00 Jaipur chart,
+26°55′N, 75°47′E, Lahiri/mean nodes. Its checked fixture is computed with the same
+engine, not placeholder positions. Opening it recomputes in the worker and never
+automatically saves it. The sample birth Panchang is not today's daily Panchang.
