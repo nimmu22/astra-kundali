@@ -7,10 +7,11 @@
   "packageManager": "pnpm@11.25.0",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 4173",
-    "build": "tsc -b && vite build && node scripts/postbuild.mjs",
+    "build": "tsc -b && vite build && vite build --ssr src/server/worker.ts --outDir dist/server --emptyOutDir false && node scripts/postbuild.mjs",
     "test": "node --import tsx --test tests/*.test.ts",
     "check": "tsc -b",
-    "validate": "node --import tsx scripts/validate.ts"
+    "validate": "node --import tsx scripts/validate.ts",
+    "db:generate": "drizzle-kit generate"
   },
   "dependencies": {
     "@fontsource/cormorant-garamond": "^5.3.0",
@@ -27,6 +28,8 @@
     "@types/node": "22.15.3",
     "@types/react": "19.1.0",
     "@types/react-dom": "19.1.0",
+    "drizzle-kit": "0.31.10",
+    "drizzle-orm": "0.45.2",
     "tsx": "4.19.4",
     "typescript": "5.8.3",
     "vite": "6.3.5"

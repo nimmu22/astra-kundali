@@ -1,9 +1,9 @@
 """Deterministic source package. Explicit allowlist excludes checkout credentials."""
 import pathlib,tarfile,lzma
 root=pathlib.Path('.');files=[]
-for folder in ['src','public','scripts','tests','docs','vendor']:
+for folder in ['src','public','scripts','tests','docs','vendor','drizzle']:
  files.extend(p for p in (root/folder).rglob('*') if p.is_file() and '__pycache__' not in p.parts)
-for name in ['package.json','pnpm-lock.yaml','pnpm-workspace.yaml','tsconfig.json','vite.config.ts','index.html','LICENSE','NOTICE.md','README.md','.gitignore','.openai/hosting.json']:
+for name in ['package.json','pnpm-lock.yaml','pnpm-workspace.yaml','tsconfig.json','vite.config.ts','drizzle.config.ts','index.html','LICENSE','NOTICE.md','README.md','.gitignore','.openai/hosting.json']:
  p=root/name
  if p.exists():files.append(p)
 pathlib.Path('dist').mkdir(exist_ok=True)

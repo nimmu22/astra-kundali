@@ -1,12 +1,12 @@
 # ASTRA — Kundali Studio
 
-A browser-local Indian astrology study app with real Swiss Ephemeris calculations, three chart layouts, a deliberate method registry, portable reports and no paid API. English/Hindi interface, light/dark themes, IndexedDB chart collection and static PWA packaging.
+A browser-local Indian astrology study app with real Swiss Ephemeris calculations, three chart layouts, a deliberate method registry, portable reports and no paid API. English/Hindi interface, light/dark themes, IndexedDB chart collection and an offline PWA. A small server API stores only the aggregate page-view count.
 
 **Release:** 0.3.0. Core astronomical calculations are cross-checked; advanced traditional methods are experimental. This is an initial working release, not a claim that every Indian tradition has been implemented or certified. See [validation](docs/VALIDATION.md), [method choices](docs/METHODS.md) and [coverage](docs/COVERAGE.md).
 
 ## Run and build
 
-Node 24 and pnpm 11.25.0 were used for this build. A Python 3 interpreter is also required for source archive packaging. No backend or secret key is required.
+Node 24 and pnpm 11.25.0 were used for this build. A Python 3 interpreter is also required for source archive packaging. No paid API or secret key is required. The live view counter uses a Cloudflare Worker and a Sites-provisioned D1 database.
 
 ```sh
 pnpm install --frozen-lockfile
@@ -19,9 +19,9 @@ pnpm test
 pnpm build
 ```
 
-`dist/` is a static deployment. Serve its root over HTTPS (or localhost for development), with `.wasm` served as `application/wasm`. The production build generates `sw.js` and `source.tar.xz`. The development server deliberately does not install a service worker. Preserve the pinned dependency lockfile.
+`dist/client/` contains the Vite/PWA assets and `dist/server/index.js` is the API Worker. Sites deploys both and applies the schema migrations. Other hosts must supply an equivalent `/api/views` backend or deploy this Worker with its `DB` and `ASSETS` bindings. Static-only hosting preserves the Kundali tools but leaves the shared counter unavailable. The production build generates `sw.js` and `source.tar.xz`. The development server deliberately does not install a service worker. Preserve the pinned dependency lockfile.
 
-The initial hosted preview is owner-private. For a public service, deploy the static output to a public HTTPS host and verify it from an anonymous session. Making the software free does not make hosting, domains or app-store accounts costless; host within a chosen provider's limits, allow optional donations, or self-host. All calculation features remain free without premium gating.
+The initial hosted preview is owner-private. For a public service, deploy the Worker and client assets to a public HTTPS host and verify it from an anonymous session. Making the software free does not make hosting, domains or app-store accounts costless; host within a chosen provider's limits, allow optional donations, or self-host. All calculation features remain free without premium gating.
 
 ## Numerical regression suite
 
@@ -74,3 +74,20 @@ example recomputes it locally. A report guide opens every planet, all twelve hou
 include actual lord connections, occupants and received aspects; every current
 MD/AD/PD has natal context, followed by current/upcoming AD dates. These explanations
 are original traditional symbolism, not guaranteed personal predictions.
+
+## Page views
+
+The header counts document loads and refreshes, not unique people. Tab/theme/language
+changes and the 30-second read-only polling do not increment the total. A shared
+registration promise avoids duplicate React StrictMode effect requests. Offline or
+failed requests show an unavailable placeholder/last received value, never a fake count.
+
+`POST /api/views` atomically increments the single `site_views` aggregate row;
+`GET /api/views` reads it with caching disabled. Cross-site browser writes are
+rejected. No IP, user, birth, device or fingerprint records are stored by the counter.
+The initial total starts at zero; historical views cannot be reconstructed.
+
+Schema: `src/server/schema.ts`. Generate new migrations with `pnpm db:generate`,
+then publish through Sites. Preserve applied SQL and journal history. For standalone
+Cloudflare deployment, replace the placeholder D1 ID in the generated Wrangler
+configuration with your own provisioned database and apply the migration.

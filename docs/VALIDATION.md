@@ -67,3 +67,12 @@ TypeScript and 16 Node test groups pass. The final build checks English/Hindi SS
 and the actual service-worker inventory. No calculation engine formula changed.
 Visual layout, live clicks, print pagination and browser offline behavior remain
 unverified because the supported managed browser QA capability was unavailable.
+
+## Aggregate page-view counter
+
+A real SQLite adapter applies the generated migration and checks 30 atomic
+concurrent increments, shared persistent totals, read-only GETs, no-store headers,
+method/origin guards, unavailable bindings, database errors, invalid totals and
+static-asset delegation. English/Hindi SSR verifies the header badge and its honest
+loading placeholder. The counter stores a single aggregate row; no birth data is sent.
+Browser interactions and offline UI still require the previously documented QA.
