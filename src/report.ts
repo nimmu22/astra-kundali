@@ -1,0 +1,16 @@
+import inter from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
+import devanagari from '@fontsource/noto-sans-devanagari/files/noto-sans-devanagari-devanagari-400-normal.woff2?url';
+import latin from '@fontsource/noto-sans-devanagari/files/noto-sans-devanagari-latin-400-normal.woff2?url';
+import serif from '@fontsource/cormorant-garamond/files/cormorant-garamond-latin-500-normal.woff2?url';
+import css from './styles.css?raw';
+import {download} from './storage';
+import type {Lang} from './domain';
+async function encoded(url:string){const r=await fetch(url);if(!r.ok)throw new Error('Report font could not be loaded.');const b=new Uint8Array(await r.arrayBuffer());let s='';for(let i=0;i<b.length;i++)s+=String.fromCharCode(b[i]);return `data:font/woff2;base64,${btoa(s)}`;}
+export async function saveReportHTML(element:HTMLElement,lang:Lang){
+ const fonts=await Promise.all([inter,devanagari,latin,serif].map(encoded));
+ const clone=element.cloneNode(true) as HTMLElement;
+ clone.querySelectorAll('[tabindex],[role="button"]').forEach(e=>{e.removeAttribute('tabindex');e.removeAttribute('role');});
+ const fontCSS=`@font-face{font-family:Inter;src:url(${fonts[0]})} @font-face{font-family:'Noto Sans Devanagari';src:url(${fonts[1]});unicode-range:U+0900-097F} @font-face{font-family:'Noto Sans Devanagari';src:url(${fonts[2]});unicode-range:U+0000-00FF} @font-face{font-family:'Cormorant Garamond';src:url(${fonts[3]});font-weight:500}`;
+ const reportCSS=`:root{color-scheme:light;--bg:#fff;--ink:#25372b;--muted:#6c7d70;--line:#e1e8dc;--panel-soft:#f5f8f0;--chart:#fafcf6;--gold:#947047;--accent:#466335}body{max-width:900px;margin:32px auto;padding:25px;background:white}#print-report{display:block}.report-heading{border-bottom:1px solid var(--line);padding-bottom:20px}.report-heading>span{font-size:9px;letter-spacing:2px}.report-charts{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:25px 0}.report-charts h2{text-align:center}.report-charts .kundali{max-width:360px;margin:auto}.chart-planet{fill:#466335!important}#print-report h2{margin:26px 0 12px}#print-report h3{margin-top:18px}#print-report .metric-card,#print-report .panel,#print-report .house-card,#print-report .condition-grid>article{background:#fff;border-color:#dce1ef;box-shadow:none}#print-report .current-period button,#print-report .icon-button{display:none}#print-report .current-period{background:#f8f7fc}#print-report .detail-grid dd{color:#25283d}#print-report .house-card h3{color:#25283d}#print-report .house-grid,#print-report .planet-detail-grid{grid-template-columns:repeat(3,1fr)}#print-report details p{display:block}@media(max-width:650px){#print-report .house-grid{grid-template-columns:1fr 1fr}#print-report .planet-detail-grid{grid-template-columns:1fr}}#print-report small{font-size:9px}.table-scroll{overflow:auto}@media(max-width:550px){body{padding:18px;margin:0}.report-charts{grid-template-columns:1fr}}@media print{body{padding:0;margin:0;max-width:none}.report-charts{grid-template-columns:1fr 1fr}}`;
+ download('astra-kundali-report.html',`<!doctype html><html lang="${lang}" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ASTRA Kundali report</title><style>${fontCSS}\n${css}\n${reportCSS}</style></head><body>${clone.outerHTML}</body></html>`,'text/html');
+}

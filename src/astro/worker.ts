@@ -1,0 +1,4 @@
+import wasmUrl from '@swisseph/browser/dist/swisseph.wasm?url';
+import {AstroEngine} from './engine';
+const engine=new AstroEngine();const ready=engine.init(wasmUrl);let queue=Promise.resolve();
+self.onmessage=(e:MessageEvent)=>{const {id,type,payload}=e.data;queue=queue.then(async()=>{try{await ready;let result;switch(type){case 'chart':result=engine.chart(payload.input,payload.profile);break;case 'panchang':result=engine.panchang(payload.date,payload.place,payload.profile);break;case 'return':result=engine.solarReturn(payload.chart,payload.year);break;case 'saturn':result=engine.saturnTimeline(payload.chart,payload.asOf);break;default:throw new Error('Unknown job');}self.postMessage({id,result});}catch(error){self.postMessage({id,error:error instanceof Error?error.message:'Calculation failed'});}});};

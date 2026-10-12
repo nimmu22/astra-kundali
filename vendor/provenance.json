@@ -1,0 +1,15 @@
+{
+  "wrapperCommit": "19f29e30603bd5ebd77306a690c867ac249f55d6",
+  "wrapperSource": "https://api.github.com/repos/swisseph-js/swisseph/tarball/19f29e30603bd5ebd77306a690c867ac249f55d6",
+  "swissReferenceSource": "https://pypi.org/project/pyswisseph/2.10.3.2/",
+  "archives": [
+    {
+      "file": "pyswisseph-2.10.3.2.tar.gz",
+      "sha256": "c54c305e83dbd5d2b71e58d8a69d8ee41de24c4d3328ce09e2af860a3537624d"
+    },
+    {
+      "file": "swisseph-js-1.4.0-source.tar.gz",
+      "sha256": "a82f07b93c8fd7fbefbd99e9b508d0a950d58bdaa53db7c4ac8d8d275f1743f6"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "birthCases": 200,
+  "panchangDays": 1000,
+  "reference": "pyswisseph 2.10.3.2 / Swiss Ephemeris 2.10.03",
+  "maxDifferences": {
+    "planetDegrees": 5.477261311170878e-09,
+    "speedDegreesPerDay": 4.572706560623807e-08,
+    "ascendantDegrees": 6.062350621505175e-11,
+    "cuspDegrees": 1.7053025658242404e-13,
+    "ayanamshaDegrees": 0,
+    "sunEventSeconds": 0.0017300248146057129,
+    "panchangEndSeconds": 0.0005230307579040527
+  },
+  "limitations": [
+    "Shared Swiss Ephemeris core, not independent astronomical certification",
+    "Synthetic cases; no claim of classical-method certification",
+    "Browser, service worker and print-dialog QA not executed"
+  ]
+}
