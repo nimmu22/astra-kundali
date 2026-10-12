@@ -43,3 +43,13 @@ Additional static checks pass: English/Hindi React server rendering; nine planet
 - Independent astronomical/reference datasets and specialist traditional-rule review.
 
 Browser QA was unavailable in the managed build environment. No browser or live offline success is claimed. TypeScript, Node calculations, production build, static package and SSR checks were used instead; the source includes this limitation for reviewers.
+
+## Interface refresh (12 October 2026)
+
+Original HOT Labs-inspired charcoal/amber styling, top navigation, warm light theme,
+responsive navigation drawer, larger form/report text and reduced-motion variants.
+Existing 12 calculation/location/report test groups and TypeScript pass. English/Hindi
+SSR confirms the new header, hero actions, current navigation state and birth form.
+The new-chart flow also reopens the birth editor. No astronomy/rule formulas changed.
+Desktop/mobile visual interaction QA remains unverified: the managed browser QA
+capability was unavailable. The supplied reference was visually inspected separately.
